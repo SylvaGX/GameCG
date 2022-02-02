@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gladiador
+* source:	https://sketchfab.com/3d-models/gladiador-874fc7e11d674f51a4dc2082d29c9b9a
+* author:	jlazcanoteguiga (https://sketchfab.com/jlazcanoteguiga)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gladiador" (https://sketchfab.com/3d-models/gladiador-874fc7e11d674f51a4dc2082d29c9b9a) by jlazcanoteguiga (https://sketchfab.com/jlazcanoteguiga) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

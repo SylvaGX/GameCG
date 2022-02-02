@@ -1,0 +1,393 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 10089,
+      "max": [
+        54.541168212890625,
+        56.090309143066406,
+        -30.364459991455078
+      ],
+      "min": [
+        -52.42327880859375,
+        -25.43181037902832,
+        -139.085205078125
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 121068,
+      "componentType": 5126,
+      "count": 10089,
+      "max": [
+        0.9999361634254456,
+        0.9995699524879456,
+        0.9982129335403442
+      ],
+      "min": [
+        -0.9999226927757263,
+        -0.9997523427009583,
+        -0.9997209310531616
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 10089,
+      "max": [
+        0.9960936903953552,
+        0.99609375
+      ],
+      "min": [
+        0.00390625,
+        0.01020437479019165
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 50754,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 242136,
+      "componentType": 5126,
+      "count": 35415,
+      "max": [
+        46.84246063232422,
+        11.469632148742676,
+        0.0776199996471405
+      ],
+      "min": [
+        -46.842464447021484,
+        -23.196760177612305,
+        -202.89700317382813
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 667116,
+      "componentType": 5126,
+      "count": 35415,
+      "max": [
+        0.9999939799308777,
+        0.9999897480010986,
+        0.9999982714653015
+      ],
+      "min": [
+        -0.9999992251396179,
+        -0.9999986290931702,
+        -0.9999993443489075
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 80712,
+      "componentType": 5126,
+      "count": 35415,
+      "max": [
+        0.9980469942092896,
+        0.9980469942092896
+      ],
+      "min": [
+        0.0019529999699443579,
+        0.009460985660552979
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 364032,
+      "componentType": 5126,
+      "count": 35415,
+      "max": [
+        0.9980469942092896,
+        0.9980469942092896
+      ],
+      "min": [
+        0.0019529999699443579,
+        0.009460985660552979
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 647352,
+      "componentType": 5126,
+      "count": 35415,
+      "max": [
+        0.9980469942092896,
+        0.9980469942092896
+      ],
+      "min": [
+        0.0019529999699443579,
+        0.009460985660552979
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 203016,
+      "componentType": 5125,
+      "count": 183720,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "jlazcanoteguiga (https://sketchfab.com/jlazcanoteguiga)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/gladiador-874fc7e11d674f51a4dc2082d29c9b9a",
+      "title": "Gladiador"
+    },
+    "generator": "Sketchfab-10.64.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 937896,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 930672,
+      "byteOffset": 937896,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1092096,
+      "byteOffset": 1868568,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2960664,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Gladiator1_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Gladiator1_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Weapon",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.748767
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Gladiator1",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6,
+            "TEXCOORD_1": 7,
+            "TEXCOORD_2": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        -1.6628501242621493e-08,
+        -8.924780914298939e-09,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.6858739316326353e-09,
+        0.00999999977648244,
+        0.0,
+        0.0,
+        -0.00999999977648244,
+        -1.6858739316326353e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Gladiator_weapon_2"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.6858739316326353e-09,
+        0.00999999977648244,
+        0.0,
+        0.0,
+        -0.00999999977648244,
+        -1.6858739316326353e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Gladiator_3"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_6"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
