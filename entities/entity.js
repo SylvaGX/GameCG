@@ -46,6 +46,10 @@ export const entity = (() => {
         GetComponent(n) {
             return this._components[n];
         }
+      
+        DeleteComponent(n) {
+            delete this._components[n];
+        }
         
         FindEntity(n) {
             return this._parent.Get(n);
@@ -98,6 +102,8 @@ export const entity = (() => {
         }
     
         InitComponent() {}
+
+        Delete() {}
     
         GetComponent(n) {
             return this._parent.GetComponent(n);
