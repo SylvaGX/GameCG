@@ -237,19 +237,19 @@ export const player_entity = (() => {
 		oldPosition.copy(controlObject.position);
 	
 		const forward = new THREE.Vector3(0, 0, 1);
-		forward.applyQuaternion(controlObject.quaternion);
+		forward.applyQuaternion(controlObject.quaternion); // aplica o angulo no vector mudando as componentes de x e z. y nao muda por nao fazer rotação em y.
 		forward.normalize();
 	
 		const sideways = new THREE.Vector3(1, 0, 0);
 		sideways.applyQuaternion(controlObject.quaternion);
 		sideways.normalize();
 	
-		sideways.multiplyScalar(velocity.x * timeInSeconds);
-		forward.multiplyScalar(velocity.z * timeInSeconds);
+		sideways.multiplyScalar(velocity.x * timeInSeconds);//Andar para os lados. Atualmente nao ativado. Em vez roda a camera e nao anda para os lados
+		forward.multiplyScalar(velocity.z * timeInSeconds); // andar para a frente. Tanto multiplica para x e para z
 	
 		const pos = controlObject.position.clone();
-		pos.add(forward);
-		pos.add(sideways);
+		pos.add(forward); // fazer andar para a frente
+		pos.add(sideways); // nao ativo porque velocity.x = 0
   
 		const collisions = this._FindIntersections(pos);
 		if (collisions.length > 0) {
