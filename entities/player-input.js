@@ -54,8 +54,6 @@ export const player_input = (() => {
         y: ((event.clientY - rect.top ) / rect.height) * -2 + 1,
       };
 
-      console.log(this);
-
       this._raycaster.setFromCamera(pos, this._params.camera);
 
       const pickables = this._parent._parent.Filter((e) => {

@@ -76,13 +76,13 @@ export const npc_entity = (() => {
     _OnPosition(m) {
       if (this._target) {
         this._target.position.copy(m.value);
-        this._target.position.y = 0.35;
+        this._target.position.y = 0.1;
       }
     }
 
     _LoadModels() {
       const loader = new FBXLoader();
-      loader.setPath('./resources/monsters/FBX/');
+      loader.setPath('./assets/models/monsters/FBX/');
       loader.load(this._params.resourceName, (glb) => {
         this._target = glb;
         this._params.scene.add(this._target);
@@ -92,7 +92,7 @@ export const npc_entity = (() => {
         this._target.position.y += 0.35;
         const texLoader = new THREE.TextureLoader();
         const texture = texLoader.load(
-            './resources/monsters/Textures/' + this._params.resourceTexture);
+            './assets/models/monsters/Textures/' + this._params.resourceTexture);
         texture.encoding = THREE.sRGBEncoding;
         texture.flipY = true;
 
@@ -152,16 +152,29 @@ export const npc_entity = (() => {
       };
 
       const grid = this.GetComponent('SpatialGridController');
-      const nearby = grid.FindNearbyEntities(2).filter(e => _IsAlive(e));
+      const nearby = grid.FindNearbyEntities(100).filter(e => _IsAlive(e));
       const collisions = [];
 
       for (let i = 0; i < nearby.length; ++i) {
         const e = nearby[i].entity;
-        const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
+        if(e._name == "Castelo"){
+          var p = e.GetComponent("Castelo");
+          if(p != null && p != undefined){
+            if(p._CheckCollision(pos)){
+              collisions.push([e, 0]);
+            }
+          }
+        }
+        else{
+          const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
 
-        // HARDCODED
-        if (d <= 4) {
-          collisions.push(nearby[i].entity);
+          // HARDCODED
+          var p = e.GetComponent("Physics");
+          if(p != null && p != undefined){
+            if (d <= p.distance) {
+              collisions.push([e, p.distance - d]);
+            }
+          }
         }
       }
       return collisions;

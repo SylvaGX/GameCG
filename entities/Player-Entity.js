@@ -143,17 +143,30 @@ export const player_entity = (() => {
 		};
   
 		const grid = this.GetComponent('SpatialGridController');
-		const nearby = grid.FindNearbyEntities(5).filter(e => _IsAlive(e));
+		const nearby = grid.FindNearbyEntities(100).filter(e => _IsAlive(e));
 		const collisions = [];
   
 		for (let i = 0; i < nearby.length; ++i) {
-		  const e = nearby[i].entity;
-		  const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
-  
-		  // HARDCODED
-		  if (d <= 4) {
-			collisions.push(nearby[i].entity);
-		  }
+			const e = nearby[i].entity;
+			if(e._name == "Castelo"){
+				var p = e.GetComponent("Castelo");
+				if(p != null && p != undefined){
+					if(p._CheckCollision(pos)){
+						collisions.push([e, 0]);
+					}
+				}
+			}
+			else{
+				const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
+				
+				// HARDCODED
+				var p = e.GetComponent("Physics");
+				if(p != null && p != undefined){
+					if (d <= p.distance) {
+						collisions.push([e, p.distance - d]);
+					}
+				}
+			}
 		}
 		return collisions;
 	  }
@@ -255,7 +268,7 @@ export const player_entity = (() => {
 		if (collisions.length > 0) {
 		  return;
 		}
-  
+		pos.y = 0.5;
 		controlObject.position.copy(pos);
 		this._position.copy(pos);
 	

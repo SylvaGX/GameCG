@@ -151,7 +151,7 @@ export const FreeCameraInput_controller = (() => {
         event.preventDefault();
     }
 
-    Update(){
+    Update(timeElapsed){
         const direction = new THREE.Vector3();
 
 		direction.z = Number( this._keys.forward ) - Number( this._keys.backward );
@@ -159,36 +159,36 @@ export const FreeCameraInput_controller = (() => {
 		direction.x = Number( this._keys.left ) - Number( this._keys.right );
 
 		if(direction.z == 1){
-			this._params.camera.position.x = this._params.camera.position.x + Math.cos(this.CamTheta) * Math.sin(this.CamPsi);
-			this._params.camera.position.y = this._params.camera.position.y + Math.cos(this.CamPsi);
-			this._params.camera.position.z = this._params.camera.position.z + Math.sin(this.CamTheta) * Math.sin(this.CamPsi);
+			this._params.camera.position.x = this._params.camera.position.x + 20 * Math.cos(this.CamTheta) * Math.sin(this.CamPsi) * timeElapsed;
+			this._params.camera.position.y = this._params.camera.position.y + 20 * Math.cos(this.CamPsi) * timeElapsed;
+			this._params.camera.position.z = this._params.camera.position.z + 20 * Math.sin(this.CamTheta) * Math.sin(this.CamPsi) * timeElapsed;
 		}
 		else if(direction.z == -1){
-			this._params.camera.position.x = this._params.camera.position.x - Math.cos(this.CamTheta) * Math.sin(this.CamPsi);
-			this._params.camera.position.y = this._params.camera.position.y - Math.cos(this.CamPsi);
-			this._params.camera.position.z = this._params.camera.position.z - Math.sin(this.CamTheta) * Math.sin(this.CamPsi);
+			this._params.camera.position.x = this._params.camera.position.x - 20 * Math.cos(this.CamTheta) * Math.sin(this.CamPsi) * timeElapsed;
+			this._params.camera.position.y = this._params.camera.position.y - 20 * Math.cos(this.CamPsi) * timeElapsed;
+			this._params.camera.position.z = this._params.camera.position.z - 20 * Math.sin(this.CamTheta) * Math.sin(this.CamPsi) * timeElapsed;
 		}
 
 		if(direction.y == 1){
-			this._params.camera.position.x = this._params.camera.position.x - Math.cos(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180);
-			this._params.camera.position.y = this._params.camera.position.y - Math.cos(this.CamPsi + 90 * Math.PI / 180);
-			this._params.camera.position.z = this._params.camera.position.z - Math.sin(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180);
+			this._params.camera.position.x = this._params.camera.position.x - 20 * Math.cos(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
+			this._params.camera.position.y = this._params.camera.position.y - 20 * Math.cos(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
+			this._params.camera.position.z = this._params.camera.position.z - 20 * Math.sin(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
 		}
 		else if(direction.y == -1){
-			this._params.camera.position.x = this._params.camera.position.x + Math.cos(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180);
-			this._params.camera.position.y = this._params.camera.position.y + Math.cos(this.CamPsi + 90 * Math.PI / 180);
-			this._params.camera.position.z = this._params.camera.position.z + Math.sin(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180);
+			this._params.camera.position.x = this._params.camera.position.x + 20 * Math.cos(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
+			this._params.camera.position.y = this._params.camera.position.y + 20 * Math.cos(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
+			this._params.camera.position.z = this._params.camera.position.z + 20 * Math.sin(this.CamTheta) * Math.sin(this.CamPsi + 90 * Math.PI / 180) * timeElapsed;
 		}
 
 		if(direction.x == 1){
-			this._params.camera.position.x = this._params.camera.position.x - Math.cos(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi);
+			this._params.camera.position.x = this._params.camera.position.x - 20 * Math.cos(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi) * timeElapsed;
 			//this._params.camera.position.y = this._params.camera.position.y + Math.cos(this.CamPsi);
-			this._params.camera.position.z = this._params.camera.position.z - Math.sin(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi);
+			this._params.camera.position.z = this._params.camera.position.z - 20 * Math.sin(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi) * timeElapsed;
 		}
 		else if(direction.x == -1){
-			this._params.camera.position.x = this._params.camera.position.x + Math.cos(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi);
+			this._params.camera.position.x = this._params.camera.position.x + 20 * Math.cos(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi) * timeElapsed;
 			//this._params.camera.position.y = this._params.camera.position.y + Math.cos(this.CamPsi);
-			this._params.camera.position.z = this._params.camera.position.z + Math.sin(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi);
+			this._params.camera.position.z = this._params.camera.position.z + 20 * Math.sin(this.CamTheta + 90 * Math.PI / 180) * Math.sin(this.CamPsi) * timeElapsed;
 		}
 
 		/*

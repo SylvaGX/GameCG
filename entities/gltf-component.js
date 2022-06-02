@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118.1/build/three.module.js';
 
 import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
 import {FBXLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/FBXLoader.js';
@@ -75,6 +75,7 @@ export const gltf_component = (() => {
             }
           }
         }
+
         if (this._params.receiveShadow != undefined) {
           c.receiveShadow = this._params.receiveShadow;
         }
@@ -116,12 +117,20 @@ export const gltf_component = (() => {
   
     InitComponent() {
       this._RegisterHandler('update.position', (m) => { this._OnPosition(m); });
+      this._RegisterHandler('update.rotation', (m) => { this._OnRotation(m); });
     }
 
     _OnPosition(m) {
       if (this._target) {
         this._target.position.copy(m.value);
-        this._target.position.y = 0.35;
+        this._target.position.y = 0.5;
+      }
+    }
+
+    _OnRotation(m) {
+      if (this._target) {
+        var _R = this._target.quaternion.clone();
+        this._target.quaternion.copy(_R.multiply(m.value));
       }
     }
 
@@ -149,6 +158,11 @@ export const gltf_component = (() => {
       this.Broadcast({
         topic: 'update.position',
         value: this._parent._position,
+      });
+      
+      this.Broadcast({
+        topic: 'update.rotation',
+        value: this._parent._rotation,
       });
 
       let texture = null;
