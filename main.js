@@ -112,10 +112,6 @@ class Main {
 		this._scene = new THREE.Scene();
 		this._scene.background = new THREE.Color(0xFFFFFF);
 		
-		//Helper para a camara ortografica
-		//let cameraHelper2 = new THREE.CameraHelper(this._cameraOrtho);
-		//this._scene.add(cameraHelper2);
-		
 		// Criar a luz do sol
 		let sun = new THREE.DirectionalLight(0xFFFF66, 0.0); // DirectionalLight(cor, itensidade)
 		sun.theta = 45.0 * Math.PI / 180;
@@ -134,11 +130,7 @@ class Main {
 		sun.shadow.camera.right = -300;
 		sun.shadow.camera.top = 300;
 		sun.shadow.camera.bottom = -300;
-
-		//Helper para a directional light
-		var cameraHelper = new THREE.CameraHelper(sun.shadow.camera);
-		this._scene.add(cameraHelper);
-
+		
 		this._sun = sun;
 		this._scene.add(this._sun);
 		
@@ -189,6 +181,10 @@ class Main {
 		this._LoadClouds();// Adicionar nuvens
         this._LoadSky();//Adicionar um ceu
 		this._LoadPlayer();//Adicionar o player, um npc e monstros
+		this._timeComplete = 0;
+		const myTimeout = setTimeout(()=>{
+			this._timeComplete = 1;
+		}, 12000);
 
 		this._previousRAF = null;
 		this._RAF();//Função para o loop
@@ -558,9 +554,6 @@ class Main {
 	}
 
 	_UpdateSun(timeElapsed) {
-		//const player = this._entityManager.Get('player');
-		//const pos = this._sun.position /*player._position*/;
-
 		//this._sun.theta += timeElapsedS / 16;
 		//6 horas equivale a 1 dia
 		//3 horas de dia e 3 horas de noite
@@ -644,7 +637,7 @@ class Main {
 	}
 
 	_Step(timeElapsed) {
-		const timeElapsedS = Math.min(1.0 / 30.0, timeElapsed * 0.001);
+		const timeElapsedS = Math.min(1.0 / 30.0, timeElapsed * 0.001) * this._timeComplete;
 
 		this._DayTime += timeElapsedS;
 
