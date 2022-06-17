@@ -20,7 +20,7 @@ This is are my changes:
 - Add a sun & a sky with "normal" colors
 - Change the chararcter & its animations
 - Build in three.js a castle
-- Add texture 4K texture to the ground & to the castle
+- Add texture 4K to the ground & to the castle
 - Build in three.js a lamp which immits light with an PointLight
 - Use PBR to render the lights, so that use real physics light calculation
 - Add a free camera
