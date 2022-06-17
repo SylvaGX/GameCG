@@ -25,3 +25,11 @@ This is are my changes:
 - Use PBR to render the lights, so that use real physics light calculation
 - Add a free camera
 - Correct the lights for the night using a diference of 2 sigmoid functions(I made them myself trying to achieve a good transition. It took a good amount of time :sweat:, but I'm really happy of the result :smile:)
+
+## Contributing
+This project is based on a university project by [UTAD](https://www.utad.pt) - Universidade de Trás-os-Montes e Alto Douro
+## Authors
+
+* **Tomás Silva** - *ALL work* - [TomDev03](https://github.com/TomDev03)
+
+See also the list of [contributors](https://github.com/TomDev03/GameCG/graphs/contributors) who participated in this project.
