@@ -3,7 +3,7 @@
 This is a RPG Game "made by me" for an UC(Curricular Unit) for the university.
 
 # Thanks
-Thanks very much tu @simondevyoutube which help me a lot for the basics of three.js & for the base of the game.
+Thanks very much tu [@simondevyoutube](https://github.com/simondevyoutube/) which help me a lot for the basics of three.js & for the base of the game.
 PLEASE check his work!!! Its very good!!!
 
 GitHub: https://github.com/simondevyoutube/
