@@ -15,7 +15,7 @@ Twitter: https://twitter.com/iced_coffee_dev
 # What I did?
 So, I change the game which @simondevyoutube made and turn a little bit more detailed.
 
-This is are my changes:
+This are my changes:
 - Add Day/Night Cycle
 - Add a sun & a sky with "normal" colors
 - Change the chararcter & its animations
